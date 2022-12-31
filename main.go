@@ -213,12 +213,11 @@ func detailProject(w http.ResponseWriter, r *http.Request){
 }
 
 func deleteProject(w http.ResponseWriter, r *http.Request){
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	id, _ := strconv.Atoi(mux.Vars(r)["id"])
 
 	Projects = append(Projects[:id], Projects[id+1:]...)
-
-	http.Redirect(w, r, "/", http.StatusMovedPermanently)
+	
+	http.Redirect(w, r, "/", http.StatusFound)
 }
 
 func editProject(w http.ResponseWriter, r *http.Request){
