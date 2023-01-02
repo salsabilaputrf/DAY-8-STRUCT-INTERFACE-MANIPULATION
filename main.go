@@ -55,7 +55,7 @@ func main(){
 
 	// port := 5000
 	fmt.Println("Server is running on port 5000")
-	http.ListenAndServe("localhost:5000", route)
+	http.ListenAndServe("localhost:5050", route)
 }
 
 func home(w http.ResponseWriter, r *http.Request){
